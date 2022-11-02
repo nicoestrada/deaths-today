@@ -13,7 +13,12 @@ Please see below a log of current progress and future tasks:
  * [x] [Recalibrate the request of deaths to be a complete list of total from yesterday](https://github.com/nicoestrada/deaths-today/commit/74f99790c945687196387a12a4840373d83fada2)
  * [x] [Established parsing output to generate a new html file in 2 new public directories](https://github.com/nicoestrada/deaths-today/commit/74f99790c945687196387a12a4840373d83fada2)
  * [x] [Integrate responsive HTML/CSS layout to output](https://github.com/nicoestrada/deaths-today/commit/74f99790c945687196387a12a4840373d83fada2)
- * [ ] Clean text output from deaths inside container card
+ * [x] Clean text output from deaths inside container card
  * [ ] Implement SendGrid API for email sending
  * [ ] Configure DNS domain name, email sender identity
+ * [x] Fix links within each element
+ * [ ] Edge case of last/first day of new month
+ 
+
+
 

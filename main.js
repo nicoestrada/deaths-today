@@ -171,6 +171,16 @@ const template = (content) => {
   }
 //end template
 
+const cleanseLinks = ($) => {
+  return $('a').each(function () {
+    var oldHref = $(this).attr('href')
+    var newHref =
+      !!oldHref && oldHref.charAt(0) == '/' ? 'https://wikipedia.org' + oldHref : oldHref
+    $(this).attr('href', newHref)
+    $(this).attr('target', '_blank')
+  })
+}
+
 const makeDir = (folderPath) => {
     return new Promise((resolve, reject) => {
         fs.mkdir(folderPath, {recursive: true}, (err) => {
@@ -185,7 +195,8 @@ request(URL, async (error, response, body) => {
     if (error) throw new Error('Something is not working right', error)
 
     const $ = cheerio.load(body);
-    const deaths = $('h3').first().next().next().next().next().next('ul').text()
+    cleanseLinks($)
+    const deaths = $('h3').first().next().next().next().next('ul').html()
 
     const dir = `./public/${yesterday.format('YYYY/MMMM')}`
     const filename = `${yesterday.format('D')}.html`
