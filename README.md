@@ -21,4 +21,4 @@ Please see below a log of current progress and future tasks:
  * [x] Added public/ to build, clean links method
  * [ ] Explore aws-sdk, express, db mgmt
 
- ![Working file as of 11/02/22](https://github.com/nicoestrada/deaths-today/blob/main/public/2022/November/product.png?raw=true)
+ ![Working file as of 11/02/22](https://github.com/nicoestrada/deaths.today/blob/main/public/2022/November/product.png?raw=true)
