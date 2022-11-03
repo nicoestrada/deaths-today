@@ -4,7 +4,7 @@ From Wikipedia's real-time notable deaths page. Data consists of name, age, coun
 
 For more information, click [here](https://en.wikipedia.org/wiki/Deaths_in_2022).
 
-## Components:
+## Tasks:
 
 Please see below a log of current progress and future tasks:
 
@@ -18,7 +18,7 @@ Please see below a log of current progress and future tasks:
  * [ ] Configure DNS domain name, email sender identity
  * [x] Fix links within each element
  * [ ] Edge case of last/first day of new month
- 
+ * [x] Added public/ to build, clean links method
+ * [ ] Explore aws-sdk, express, db mgmt
 
-
-
+ ![Working file as of 11/02/22](https://github.com/nicoestrada/deaths-today/blob/main/public/November/product.png?raw=true)
