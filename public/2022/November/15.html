@@ -1,24 +1,10 @@
-const request = require('request')
-const cheerio = require('cheerio')
-const moment = require('moment')
-const fs = require('fs')
 
-const URL = 'https://en.wikipedia.org/wiki/Deaths_in_2022'
-const yesterday = moment().subtract(1, 'day')
-const currMonth = yesterday.format('MMMM')
-const currDay = yesterday.format('D')
-const dateLayout = yesterday.format('MMMM DD, YYYY')
-const linkColor = '#2c3e50'
-
-//html template
-const template = (content) => {
-    return `
   <!doctype html>
   <html>
     <head>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Notable Deaths: ${dateLayout}</title>
+        <title>Notable Deaths: November 15, 2022</title>
     </head>
     <style>
     @media only screen and (max-width: 620px) {
@@ -119,7 +105,7 @@ const template = (content) => {
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 24px; font-weight:bold; vertical-align: top;">
-                        Notable Deaths: ${dateLayout}
+                        Notable Deaths: November 15, 2022
                       </td>
                     </tr>
                     <tr>
@@ -129,7 +115,7 @@ const template = (content) => {
                     </tr>
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                        View on <a href="${URL}" target="_blank" style="text-decoration: none;color:${linkColor};">Wikipedia →</a>
+                        View on <a href="https://en.wikipedia.org/wiki/Deaths_in_2022" target="_blank" style="text-decoration: none;color:#2c3e50;">Wikipedia →</a>
                       </td>
                     </tr>
                   </table>
@@ -140,7 +126,19 @@ const template = (content) => {
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-                        ${content}
+                        <li><a href="https://wikipedia.org/wiki/Luiz_Ant%C3%B4nio_Fleury_Filho" title="Luiz Antônio Fleury Filho" target="_blank">Luiz Antônio Fleury Filho</a>, 73, Brazilian politician, <a href="https://wikipedia.org/wiki/Governor_of_S%C3%A3o_Paulo" class="mw-redirect" title="Governor of São Paulo" target="_blank">governor of São Paulo</a> (1991–1994) and <a href="https://wikipedia.org/wiki/Chamber_of_Deputies_(Brazil)" title="Chamber of Deputies (Brazil)" target="_blank">deputy</a> (1999–2007).</li>
+<li><a href="https://wikipedia.org/wiki/Frida_(dog)" title="Frida (dog)" target="_blank">Frida</a>, 13, Mexican <a href="https://wikipedia.org/wiki/Search_and_rescue_dog" title="Search and rescue dog" target="_blank">search and rescue dog</a> (<a href="https://wikipedia.org/wiki/Mexican_Navy" title="Mexican Navy" target="_blank">Mexican Navy</a>).</li>
+<li><a href="https://wikipedia.org/wiki/Jin_Tielin" title="Jin Tielin" target="_blank">Jin Tielin</a>, 82, Chinese vocal coach, president of the <a href="https://wikipedia.org/wiki/China_Conservatory_of_Music" title="China Conservatory of Music" target="_blank">China Conservatory of Music</a> (1996–2009).</li>
+<li><a href="https://wikipedia.org/wiki/Hideaki_Kase" title="Hideaki Kase" target="_blank">Hideaki Kase</a>, 85, Japanese historical revisionist.</li>
+<li><a href="https://wikipedia.org/wiki/Krishna_(Telugu_actor)" title="Krishna (Telugu actor)" target="_blank">Krishna</a>, 79, Indian actor (<i><a href="https://wikipedia.org/wiki/Sakshi_(film)" title="Sakshi (film)" target="_blank">Sakshi</a></i>, <i><a href="https://wikipedia.org/wiki/Pandanti_Kapuram" title="Pandanti Kapuram" target="_blank">Pandanti Kapuram</a></i>) and politician, <a href="https://wikipedia.org/wiki/Lok_Sabha" title="Lok Sabha" target="_blank">MP</a> (1989–1991), cardiac arrest.</li>
+<li><a href="https://wikipedia.org/wiki/Heimo_Linna" title="Heimo Linna" target="_blank">Heimo Linna</a>, 96, Finnish politician, <a href="https://wikipedia.org/wiki/Parliament_of_Finland" title="Parliament of Finland" target="_blank">MP</a> (1966–1987), <a href="https://wikipedia.org/wiki/Minister_of_Agriculture_and_Forestry_(Finland)" title="Minister of Agriculture and Forestry (Finland)" target="_blank">minister of agriculture and forestry</a> (1973–1975, 1975–1976).</li>
+<li><a href="https://wikipedia.org/wiki/Gustavo_Moncayo" title="Gustavo Moncayo" target="_blank">Gustavo Moncayo</a>, 69, Colombian human rights activist, liver cancer.</li>
+<li><a href="https://wikipedia.org/wiki/Gulam_Abbas_Moontasir" title="Gulam Abbas Moontasir" target="_blank">Gulam Abbas Moontasir</a>, 80, Indian basketball player (<a href="https://wikipedia.org/wiki/Bombay_University" class="mw-redirect" title="Bombay University" target="_blank">Bombay University</a>, <a href="https://wikipedia.org/wiki/India_men%27s_national_basketball_team" title="India men's national basketball team" target="_blank">national team</a>) and actor (<i><a href="https://wikipedia.org/wiki/Khoon_Ki_Takkar" title="Khoon Ki Takkar" target="_blank">Khoon Ki Takkar</a></i>).</li>
+<li><a href="https://wikipedia.org/wiki/Jimmy_O%27Rourke_(footballer)" title="Jimmy O'Rourke (footballer)" target="_blank">Jimmy O'Rourke</a>, 76, Scottish footballer (<a href="https://wikipedia.org/wiki/Hibernian_F.C." title="Hibernian F.C." target="_blank">Hibernian</a>, <a href="https://wikipedia.org/wiki/St_Johnstone_F.C." title="St Johnstone F.C." target="_blank">St Johnstone</a>, <a href="https://wikipedia.org/wiki/Motherwell_F.C." title="Motherwell F.C." target="_blank">Motherwell</a>).</li>
+<li><a href="https://wikipedia.org/wiki/John_Palasik" title="John Palasik" target="_blank">John Palasik</a>, 68, American politician, member of the <a href="https://wikipedia.org/wiki/Vermont_House_of_Representatives" title="Vermont House of Representatives" target="_blank">Vermont House of Representatives</a> (since 2019).</li>
+<li><a href="https://wikipedia.org/wiki/Jos%C3%A9_Le%C3%B3n_S%C3%A1nchez" title="José León Sánchez" target="_blank">José León Sánchez</a>, 93, Costa Rican novelist.</li>
+<li><a href="https://wikipedia.org/wiki/Ikhtiyar_Shirinov" title="Ikhtiyar Shirinov" target="_blank">Ikhtiyar Shirinov</a>, 69–70, Azerbaijani lawyer and politician, <a href="https://wikipedia.org/wiki/List_of_Prosecutors_General_of_Azerbaijan" title="List of Prosecutors General of Azerbaijan" target="_blank">prosecutor general</a> (1992–1993).</li>
+<li><a href="https://wikipedia.org/wiki/Luis_Zingerle" title="Luis Zingerle" target="_blank">Luis Zingerle</a>, 89, Italian politician, member of the <a href="https://wikipedia.org/wiki/Landtag_of_South_Tyrol" title="Landtag of South Tyrol" target="_blank">Landtag of South Tyrol</a> (1979–1988).</li>
                       </td>
                     </tr>
                   </table>
@@ -167,51 +165,4 @@ const template = (content) => {
       </tr>
     </table>
   </body>
-  </html>`
-  }
-//end template
-
-const cleanseLinks = ($) => {
-  return $('a').each(function () {
-    var oldHref = $(this).attr('href')
-    var newHref =
-      !!oldHref && oldHref.charAt(0) == '/' ? 'https://wikipedia.org' + oldHref : oldHref
-    $(this).attr('href', newHref)
-    $(this).attr('target', '_blank')
-    
-  })
-}
-
-const removeRefs = ($) => {
-  return $('sup').each(function () {
-    $(this).remove()
-  })
-}
-
-const makeDir = (folderPath) => {
-    return new Promise((resolve, reject) => {
-        fs.mkdir(folderPath, {recursive: true}, (err) => {
-            if (err) return reject(err)
-            else return resolve(true)
-        })
-    })
-}
-
-//logic
-request(URL, async (error, response, body) => {
-    if (error) throw new Error('Something is not working right', error)
-
-    const $ = cheerio.load(body);
-    cleanseLinks($)
-    removeRefs($)
-
-    const deaths = $('h3').first().next().next().next().next('ul').html()
-    const dir = `./public/${yesterday.format('YYYY/MMMM')}`
-    const filename = `${yesterday.format('D')}.html`
-    let created = await makeDir(dir);
-    fs.writeFileSync(`${dir}/${filename}`, template(deaths))
-    console.log(`Grabbing who died on ${dateLayout}...`)
-    fs.writeFileSync(`./public/index.html`, template(deaths))
-
-    console.log("Success...check the public folder for the index.html file")
-})
+  </html>
