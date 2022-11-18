@@ -1,24 +1,10 @@
-const request = require('request')
-const cheerio = require('cheerio')
-const moment = require('moment')
-const fs = require('fs')
 
-const URL = 'https://en.wikipedia.org/wiki/Deaths_in_2022'
-const yesterday = moment().subtract(1, 'day')
-const currMonth = yesterday.format('MMMM')
-const currDay = yesterday.format('D')
-const dateLayout = yesterday.format('MMMM DD, YYYY')
-const linkColor = '#2c3e50'
-
-//html template
-const template = (content) => {
-    return `
   <!doctype html>
   <html>
     <head>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Notable Deaths: ${dateLayout}</title>
+        <title>Notable Deaths: November 06, 2022</title>
     </head>
     <style>
     @media only screen and (max-width: 620px) {
@@ -119,7 +105,7 @@ const template = (content) => {
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 24px; font-weight:bold; vertical-align: top;">
-                        Notable Deaths: ${dateLayout}
+                        Notable Deaths: November 06, 2022
                       </td>
                     </tr>
                     <tr>
@@ -129,7 +115,7 @@ const template = (content) => {
                     </tr>
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                        View on <a href="${URL}" target="_blank" style="text-decoration: none;color:${linkColor};">Wikipedia →</a>
+                        View on <a href="https://en.wikipedia.org/wiki/Deaths_in_2022" target="_blank" style="text-decoration: none;color:#2c3e50;">Wikipedia →</a>
                       </td>
                     </tr>
                   </table>
@@ -140,7 +126,14 @@ const template = (content) => {
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-                        ${content}
+                        <li><a href="https://wikipedia.org/wiki/Ali_Birra" title="Ali Birra" target="_blank">Ali Birra</a>, 72, Ethiopian singer.</li>
+<li><a href="https://wikipedia.org/wiki/Yann_Gaillard" title="Yann Gaillard" target="_blank">Yann Gaillard</a>, 86, French politician, <a href="https://wikipedia.org/wiki/Senate_(France)" title="Senate (France)" target="_blank">senator</a> (1994–2014).</li>
+<li><a href="https://wikipedia.org/wiki/Hurricane_G" title="Hurricane G" target="_blank">Hurricane G</a>, 52, American rapper.</li>
+<li><a href="https://wikipedia.org/wiki/Tomm_Kristiansen" title="Tomm Kristiansen" target="_blank">Tomm Kristiansen</a>, 72, Norwegian journalist (<a href="https://wikipedia.org/wiki/NRK" title="NRK" target="_blank">NRK</a>).</li>
+<li><a href="https://wikipedia.org/wiki/Don_Lewis" title="Don Lewis" target="_blank">Don Lewis</a>, 81, American vocalist, electronic multi-instrumentalist, and electronic engineer.</li>
+<li><a href="https://wikipedia.org/wiki/Peter_McNab" title="Peter McNab" target="_blank">Peter McNab</a>, 70, Canadian-born American ice hockey player (<a href="https://wikipedia.org/wiki/Buffalo_Sabres" title="Buffalo Sabres" target="_blank">Buffalo Sabres</a>, <a href="https://wikipedia.org/wiki/Boston_Bruins" title="Boston Bruins" target="_blank">Boston Bruins</a>) and broadcaster, cancer.</li>
+<li><a href="https://wikipedia.org/wiki/Morteza_Mohammadkhan" title="Morteza Mohammadkhan" target="_blank">Morteza Mohammadkhan</a>, 76, Iranian economist and politician, <a href="https://wikipedia.org/wiki/Ministry_of_Economic_Affairs_and_Finance_(Iran)" title="Ministry of Economic Affairs and Finance (Iran)" target="_blank">minister of economy and financial affairs</a> (1993–1997).</li>
+<li><a href="https://wikipedia.org/wiki/Chaim_Walkin" title="Chaim Walkin" target="_blank">Chaim Walkin</a>, 77, Chinese-born Israeli Orthodox rabbi.</li>
                       </td>
                     </tr>
                   </table>
@@ -167,51 +160,4 @@ const template = (content) => {
       </tr>
     </table>
   </body>
-  </html>`
-  }
-//end template
-
-const cleanseLinks = ($) => {
-  return $('a').each(function () {
-    var oldHref = $(this).attr('href')
-    var newHref =
-      !!oldHref && oldHref.charAt(0) == '/' ? 'https://wikipedia.org' + oldHref : oldHref
-    $(this).attr('href', newHref)
-    $(this).attr('target', '_blank')
-    
-  })
-}
-
-const removeRefs = ($) => {
-  return $('sup').each(function () {
-    $(this).remove()
-  })
-}
-
-const makeDir = (folderPath) => {
-    return new Promise((resolve, reject) => {
-        fs.mkdir(folderPath, {recursive: true}, (err) => {
-            if (err) return reject(err)
-            else return resolve(true)
-        })
-    })
-}
-
-//logic
-request(URL, async (error, response, body) => {
-    if (error) throw new Error('Something is not working right', error)
-
-    const $ = cheerio.load(body);
-    cleanseLinks($)
-    removeRefs($)
-
-    const deaths = $('h3').first().next().next().next().next('ul').html()
-    const dir = `./public/${yesterday.format('YYYY/MMMM')}`
-    const filename = `${yesterday.format('D')}.html`
-    let created = await makeDir(dir);
-    fs.writeFileSync(`${dir}/${filename}`, template(deaths))
-    console.log(`Grabbing who died on ${dateLayout}...`)
-    fs.writeFileSync(`./public/index.html`, template(deaths))
-
-    console.log("Success...check the public folder for the index.html file")
-})
+  </html>

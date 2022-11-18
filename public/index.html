@@ -1,24 +1,10 @@
-const request = require('request')
-const cheerio = require('cheerio')
-const moment = require('moment')
-const fs = require('fs')
 
-const URL = 'https://en.wikipedia.org/wiki/Deaths_in_2022'
-const yesterday = moment().subtract(1, 'day')
-const currMonth = yesterday.format('MMMM')
-const currDay = yesterday.format('D')
-const dateLayout = yesterday.format('MMMM DD, YYYY')
-const linkColor = '#2c3e50'
-
-//html template
-const template = (content) => {
-    return `
   <!doctype html>
   <html>
     <head>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Notable Deaths: ${dateLayout}</title>
+        <title>Notable Deaths: November 17, 2022</title>
     </head>
     <style>
     @media only screen and (max-width: 620px) {
@@ -119,7 +105,7 @@ const template = (content) => {
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 24px; font-weight:bold; vertical-align: top;">
-                        Notable Deaths: ${dateLayout}
+                        Notable Deaths: November 17, 2022
                       </td>
                     </tr>
                     <tr>
@@ -129,7 +115,7 @@ const template = (content) => {
                     </tr>
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                        View on <a href="${URL}" target="_blank" style="text-decoration: none;color:${linkColor};">Wikipedia →</a>
+                        View on <a href="https://en.wikipedia.org/wiki/Deaths_in_2022" target="_blank" style="text-decoration: none;color:#2c3e50;">Wikipedia →</a>
                       </td>
                     </tr>
                   </table>
@@ -140,7 +126,21 @@ const template = (content) => {
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family: sans-serif; font-size: 14px; vertical-align: top;">
-                        ${content}
+                        <li><a href="https://wikipedia.org/wiki/Ernesto_Abaterusso" title="Ernesto Abaterusso" target="_blank">Ernesto Abaterusso</a>, 66, Italian politician, <a href="https://wikipedia.org/wiki/Chamber_of_Deputies_(Italy)" title="Chamber of Deputies (Italy)" target="_blank">deputy</a> (1992–1994, 1996–2001).</li>
+<li><a href="https://wikipedia.org/wiki/Annika_Bi%C3%B8rnstad" title="Annika Biørnstad" target="_blank">Annika Biørnstad</a>, 64, Norwegian media executive (<a href="https://wikipedia.org/wiki/NRK" title="NRK" target="_blank">NRK</a>).</li>
+<li><a href="https://wikipedia.org/wiki/Fred_Brooks" title="Fred Brooks" target="_blank">Fred Brooks</a>, 91, American computer scientist (<a href="https://wikipedia.org/wiki/OS/360" class="mw-redirect" title="OS/360" target="_blank">OS/360</a>) and writer (<i><a href="https://wikipedia.org/wiki/The_Mythical_Man-Month" title="The Mythical Man-Month" target="_blank">The Mythical Man-Month</a></i>).</li>
+<li><a href="https://wikipedia.org/wiki/Azio_Corghi" title="Azio Corghi" target="_blank">Azio Corghi</a>, 85, Italian composer (<i><a href="https://wikipedia.org/wiki/Divara_%E2%80%93_Wasser_und_Blut" title="Divara – Wasser und Blut" target="_blank">Divara – Wasser und Blut</a></i>) and musicologist.</li>
+<li><a href="https://wikipedia.org/wiki/Michael_Gerson" title="Michael Gerson" target="_blank">Michael Gerson</a>, 58, American journalist (<i><a href="https://wikipedia.org/wiki/The_Washington_Post" title="The Washington Post" target="_blank">The Washington Post</a></i>) and speechwriter, <a href="https://wikipedia.org/wiki/White_House_Director_of_Speechwriting" title="White House Director of Speechwriting" target="_blank">White House Director of Speechwriting</a> (2001–2006), complications from kidney cancer.</li>
+<li><a href="https://wikipedia.org/wiki/Aleksandr_Gorshkov_(figure_skater)" title="Aleksandr Gorshkov (figure skater)" target="_blank">Aleksandr Gorshkov</a>, 76, Russian figure skater, Olympic champion (<a href="https://wikipedia.org/wiki/Figure_skating_at_the_1976_Winter_Olympics" title="Figure skating at the 1976 Winter Olympics" target="_blank">1976</a>) and president of the <a href="https://wikipedia.org/wiki/Figure_Skating_Federation_of_Russia" title="Figure Skating Federation of Russia" target="_blank">Figure Skating Federation of Russia</a> (since 2010).</li>
+<li><a href="https://wikipedia.org/w/index.php?title=B._Harikumar&amp;action=edit&amp;redlink=1" class="new" title="B. Harikumar (page does not exist)" target="_blank">B. Harikumar</a>, Indian actor and writer.</li>
+<li><a href="https://wikipedia.org/w/index.php?title=Daljeet_Kaur&amp;action=edit&amp;redlink=1" class="new" title="Daljeet Kaur (page does not exist)" target="_blank">Daljeet Kaur</a>, 69, Indian actress (<i><a href="https://wikipedia.org/wiki/Putt_Jattan_De" title="Putt Jattan De" target="_blank">Putt Jattan De</a></i>, <i><a href="https://wikipedia.org/wiki/Patola_(film)" title="Patola (film)" target="_blank">Patola</a></i>, <i><a href="https://wikipedia.org/wiki/Singh_vs_Kaur" title="Singh vs Kaur" target="_blank">Singh vs Kaur</a></i>).</li>
+<li><a href="https://wikipedia.org/wiki/Staughton_Lynd" title="Staughton Lynd" target="_blank">Staughton Lynd</a>, 92, American conscientious objector, peace activist, and civil rights activist.</li>
+<li><a href="https://wikipedia.org/wiki/Shettima_Mustafa" title="Shettima Mustafa" target="_blank">Shettima Mustafa</a>, 82, Nigerian politician, minister of <a href="https://wikipedia.org/wiki/Federal_Ministry_of_Agriculture_and_Rural_Development" title="Federal Ministry of Agriculture and Rural Development" target="_blank">agriculture</a> (1990–1992), <a href="https://wikipedia.org/wiki/Ministry_of_Defence_(Nigeria)" title="Ministry of Defence (Nigeria)" target="_blank">defence</a> (2008–2009) and the <a href="https://wikipedia.org/wiki/Federal_Ministry_of_Interior_(Nigeria)" title="Federal Ministry of Interior (Nigeria)" target="_blank">interior</a> (2009–2010).</li>
+<li><a href="https://wikipedia.org/wiki/Gerhard_Rodax" title="Gerhard Rodax" target="_blank">Gerhard Rodax</a>, 57, Austrian footballer (<a href="https://wikipedia.org/wiki/FC_Admira_Wacker_M%C3%B6dling" title="FC Admira Wacker Mödling" target="_blank">Admira</a>, <a href="https://wikipedia.org/wiki/SK_Rapid_Wien" title="SK Rapid Wien" target="_blank">Rapid Vienna</a>, <a href="https://wikipedia.org/wiki/Austria_national_football_team" title="Austria national football team" target="_blank">national team</a>), hit by train.</li>
+<li><a href="https://wikipedia.org/wiki/Marcus_Sedgwick" title="Marcus Sedgwick" target="_blank">Marcus Sedgwick</a>, 54, British novelist (<i><a href="https://wikipedia.org/wiki/Floodland_(novel)" title="Floodland (novel)" target="_blank">Floodland</a></i>, <i><a href="https://wikipedia.org/wiki/The_Book_of_Dead_Days" title="The Book of Dead Days" target="_blank">The Book of Dead Days</a></i>, <i><a href="https://wikipedia.org/wiki/My_Swordhand_Is_Singing" title="My Swordhand Is Singing" target="_blank">My Swordhand Is Singing</a></i>).</li>
+<li><a href="https://wikipedia.org/wiki/B._Smyth" title="B. Smyth" target="_blank">B. Smyth</a>, 28, American rapper, pulmonary fibrosis.</li>
+<li><a href="https://wikipedia.org/wiki/Udo_Walendy" title="Udo Walendy" target="_blank">Udo Walendy</a>, 95, German author and Holocaust denier.</li>
+<li><a href="https://wikipedia.org/wiki/Irineu_Silvio_Wilges" title="Irineu Silvio Wilges" target="_blank">Irineu Silvio Wilges</a>, 86, Brazilian Roman Catholic prelate, bishop of <a href="https://wikipedia.org/wiki/Roman_Catholic_Diocese_of_Cachoeira_do_Sul" title="Roman Catholic Diocese of Cachoeira do Sul" target="_blank">Cachoeira do Sul</a> (2000–2011).</li>
                       </td>
                     </tr>
                   </table>
@@ -167,51 +167,4 @@ const template = (content) => {
       </tr>
     </table>
   </body>
-  </html>`
-  }
-//end template
-
-const cleanseLinks = ($) => {
-  return $('a').each(function () {
-    var oldHref = $(this).attr('href')
-    var newHref =
-      !!oldHref && oldHref.charAt(0) == '/' ? 'https://wikipedia.org' + oldHref : oldHref
-    $(this).attr('href', newHref)
-    $(this).attr('target', '_blank')
-    
-  })
-}
-
-const removeRefs = ($) => {
-  return $('sup').each(function () {
-    $(this).remove()
-  })
-}
-
-const makeDir = (folderPath) => {
-    return new Promise((resolve, reject) => {
-        fs.mkdir(folderPath, {recursive: true}, (err) => {
-            if (err) return reject(err)
-            else return resolve(true)
-        })
-    })
-}
-
-//logic
-request(URL, async (error, response, body) => {
-    if (error) throw new Error('Something is not working right', error)
-
-    const $ = cheerio.load(body);
-    cleanseLinks($)
-    removeRefs($)
-
-    const deaths = $('h3').first().next().next().next().next('ul').html()
-    const dir = `./public/${yesterday.format('YYYY/MMMM')}`
-    const filename = `${yesterday.format('D')}.html`
-    let created = await makeDir(dir);
-    fs.writeFileSync(`${dir}/${filename}`, template(deaths))
-    console.log(`Grabbing who died on ${dateLayout}...`)
-    fs.writeFileSync(`./public/index.html`, template(deaths))
-
-    console.log("Success...check the public folder for the index.html file")
-})
+  </html>
