@@ -3,7 +3,7 @@ name: 'Deaths Today Bot'
 on:
   # push:
   schedule:
-  - cron: '0 9 * * *'
+  - cron: '/15 * * * *'
 
 jobs:
   bot:
