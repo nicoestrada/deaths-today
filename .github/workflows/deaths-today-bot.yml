@@ -27,8 +27,8 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "Today's deaths" --allow-empty
-      - name: Push the changes
+      - name: Push changes
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.WIKI_DEATHS_SECRET }}
-          branch: ${{ github.ref }}
+          branch: ${{ github.workflow-branch }}
