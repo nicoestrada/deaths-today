@@ -205,13 +205,13 @@ request(URL, async (error, response, body) => {
   cleanseLinks($)
   removeRefs($)
 
-    const deaths = $('h3').first().next().next().next().next('ul').html()
-    const dir = `./public/${yesterday.format('YYYY/MMMM')}`
-    const filename = `${yesterday.format('D')}.html`
-    let created = await makeDir(dir);
-    fs.writeFileSync(`${dir}/${filename}`, template(deaths))
-    console.log(`Grabbing who died on ${dateLayout}...`)
-    fs.writeFileSync(`./public/index.html`, template(deaths))
+  const deaths = $('h3').first().next().next().next().next('ul').html()
+  const dir = `./public/${yesterday.format('YYYY/MMMM')}`
+  const filename = `${yesterday.format('D')}.html`
+  let created = await makeDir(dir);
+  fs.writeFileSync(`${dir}/${filename}`, template(deaths))
+  console.log(`Grabbing who died on ${dateLayout}...`)
+  fs.writeFileSync(`./public/index.html`, template(deaths))
 
-    console.log("Success...check the root folder")
+  console.log("Success...check the root folder")
 })

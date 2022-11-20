@@ -30,4 +30,4 @@ jobs:
       - name: Push the changes
         uses: ad-m/github-push-action@workflow-branch
         with:
-          github_token: ${{ secrets.DEATHS_TODAY_TOKEN }}
+          github_token: ${{ secrets.WIKI_DEATHS_SECRET }}
