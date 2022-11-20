@@ -15,14 +15,14 @@ Please see below a log of current progress and future tasks:
  * [x] [Integrate responsive HTML/CSS layout to output](https://github.com/nicoestrada/deaths-today/commit/74f99790c945687196387a12a4840373d83fada2)
  * [x] Clean text output from deaths inside container card
  * [ ] Implement SendGrid API for email sending
- * [ ] Configure DNS domain name, email sender identity
+ * [x] Configure DNS domain name, email sender identity
  * [x] Fix links within each element
  * [ ] Edge case of last/first day of new month
  * [x] Added public/ to build, clean links method
  * [ ] Explore aws-sdk, express, db mgmt
  * [ ] Add conditional case if no notable deaths that day
  * [x] Create a for each death, remove reference sub tags
- * [ ] Configure Continuous Integration (CI) workflows using GitHub actions
+ * [x] Configure Continuous Integration (CI) workflows using GitHub actions
  * [x] Integrate the checkout, setup-node, push-action actions
  * [ ] Fix moment to reflect CDT time, not UTC
 

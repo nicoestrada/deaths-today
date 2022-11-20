@@ -1,9 +1,11 @@
 const request = require('request')
 const cheerio = require('cheerio')
-const moment = require('moment')
+//const moment = require('moment')
+const moment = require('moment-timezone')
 const fs = require('fs')
 
 const URL = 'https://en.wikipedia.org/wiki/Deaths_in_2022'
+moment().tz('America/Chicago').format("MMMM DD, YYYY")
 const yesterday = moment().subtract(1, 'day')
 const currMonth = yesterday.format('MMMM')
 const currDay = yesterday.format('D')
