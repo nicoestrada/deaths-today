@@ -32,4 +32,4 @@ jobs:
       - name: Push changes
         uses: ad-m/github-push-action@master
         with:
-          github_token: ${{ secrets.WIKI_DEATHS_SECRET }}
+          github_token: ${{ secrets.DEATHS_TODAY_TOKEN }}
