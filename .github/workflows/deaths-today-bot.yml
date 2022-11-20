@@ -1,9 +1,9 @@
 name: 'Deaths Today Bot'
 
 on:
-  push:
-    branches:
-      - workflow-branch
+  # push:
+  #   branches:
+  #     - workflow-branch
   schedule:
   - cron: '*/15 * * * *'
 
