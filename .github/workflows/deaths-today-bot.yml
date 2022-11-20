@@ -1,9 +1,11 @@
 name: 'Deaths Today Bot'
 
 on:
-  # push:
-  schedule:
-  - cron: '*/15 * * * *'
+  push:
+    branches:
+      - workflow-branch
+  # schedule:
+  # - cron: '*/15 * * * *'
 
 jobs:
   bot:
