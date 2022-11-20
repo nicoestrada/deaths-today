@@ -30,6 +30,6 @@ jobs:
           git add .
           git commit -m "Today's deaths" --allow-empty
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@workflow-branch
         with:
           github_token: ${{ secrets.DEATHS_TODAY_TOKEN }}
