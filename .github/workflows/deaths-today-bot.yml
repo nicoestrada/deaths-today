@@ -5,7 +5,7 @@ on:
     branches:
       - workflow-branch
   schedule:
-  - cron: '*/15 * * * *'
+  - cron: '0 1 * * *'
 
 jobs:
   bot:
