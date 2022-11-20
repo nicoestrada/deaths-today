@@ -22,6 +22,8 @@ Please see below a log of current progress and future tasks:
  * [ ] Explore aws-sdk, express, db mgmt
  * [ ] Add conditional case if no notable deaths that day
  * [x] Create a for each death, remove reference sub tags
+ * [ ] Configure Continuous Integration (CI) workflows using GitHub actions
+ * [x] Integrate the checkout, setup-node, push-action actions
 
 
  ![Working file as of 11/02/22](https://github.com/nicoestrada/deaths.today/blob/main/public/2022/November/product.png?raw=true)
