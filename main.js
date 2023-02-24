@@ -158,7 +158,7 @@ const template = (content, currentDate) => {
                 </tr>
                 <tr>
                   <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                    Made by <a href="https://twitter.com/stradamoney" style="text-decoration: none; color: ${linkColor}; ">Nico Estrada</a>.
+                    Made by <a href="https://twitter.com/stradamoney" target="_blank" style="text-decoration: none; color: ${linkColor}; ">Nico Estrada</a>.
                   </td>
                 </tr>
                 <tr>
