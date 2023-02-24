@@ -169,6 +169,11 @@ const template = (content, currentDate) => {
                       .toLowerCase()}" style="text-decoration: none; color:${linkColor};">See day before → </a>
                   </td>
                 </tr>
+                <tr>
+                  <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
+                    Want to receive emails? <a href="https://cdn.forms-content.sg-form.com/05a18d80-b46f-11ed-b29b-c6958c25fa58" target="_blank" style="text-decoration: none; color:${linkColor};">Subscribe here → </a>
+                  </td>
+                </tr>
                   </table>
                 </td>
               </tr>
