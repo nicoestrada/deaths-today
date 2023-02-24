@@ -164,7 +164,7 @@ const template = (content, currentDate) => {
                 <tr>
                   <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
                     Missed a day? <a href="https://deaths.today/${moment(currentDate)
-                      .subtract(1, 'days')
+                      .subtract(2, 'days')
                       .format('YYYY/MMMM/D')
                       .toLowerCase()}" style="text-decoration: none; color:${linkColor};">See day before → </a>
                   </td>
