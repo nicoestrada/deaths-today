@@ -13,7 +13,7 @@ const dateLayout = yesterday.format('MMMM DD, YYYY')
 const linkColor = '#2c3e50'
 
 //html template
-const template = (content) => {
+const template = (content, currentDate) => {
     return `
   <!doctype html>
   <html>
@@ -163,9 +163,9 @@ const template = (content) => {
                 </tr>
                 <tr>
                   <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                    Missed a day? <a href="https://deaths.today/${moment(currDay)
+                    Missed a day? <a href="https://deaths.today/${moment(currentDate)
                       .subtract(1, 'days')
-                      .format('MMMM DD, YYYY')
+                      .format('YYYY/MMMM/D')
                       .toLowerCase()}" style="text-decoration: none; color:${linkColor};">See day before → </a>
                   </td>
                 </tr>
