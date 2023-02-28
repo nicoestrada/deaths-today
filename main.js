@@ -6,6 +6,7 @@ const fs = require('fs')
 
 const URL = 'https://en.wikipedia.org/wiki/Deaths_in_2023'
 moment().tz('America/Chicago').format("MMMM DD, YYYY")
+const today = moment().format('LL')
 const yesterday = moment().subtract(1, 'day')
 const currMonth = yesterday.format('MMMM')
 const currDay = yesterday.format('D')
@@ -20,7 +21,7 @@ const template = (content, currentDate) => {
     <head>
         <meta name="viewport" content="width=device-width">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Notable Deaths: ${dateLayout}</title>
+        <title>Notable Deaths: ${today}</title>
     </head>
     <style>
     @media only screen and (max-width: 620px) {
@@ -121,7 +122,7 @@ const template = (content, currentDate) => {
                   <table border="0" cellpadding="0" cellspacing="0" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%;">
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 24px; font-weight:bold; vertical-align: top;">
-                        Notable Deaths: ${dateLayout}
+                        Notable Deaths: ${today}
                       </td>
                     </tr>
                     <tr>
@@ -235,7 +236,7 @@ request(URL, async (error, response, body) => {
   const filename = `${yesterday.format('D')}.html`
   let created = await makeDir(dir);
   fs.writeFileSync(`${dir}/${filename}`, template(deaths))
-  console.log(`Grabbing who died on ${dateLayout}...`)
+  console.log(`Grabbing who died on ${today}...`)
   fs.writeFileSync(`./public/index.html`, template(deaths))
 
   console.log("Success...check the root folder")
