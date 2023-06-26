@@ -127,7 +127,7 @@ const template = (content, currentDate) => {
                     </tr>
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 16px; vertical-align: top;font-style:italic;">
-                        Wikipedia's notable deaths, delivered daily to your inbox.
+                        Stay current on notable figures that have passed away. Delivered daily.
                       </td>
                     </tr>
                     <tr>
