@@ -27,4 +27,4 @@ Please see below a log of current progress and future tasks:
  * [x] [Integrate GitHub action workflow for sending daily email](https://github.com/nicoestrada/deaths.today/commit/cd40df4efceb24945ddac05dbb86733be78c82aa)
 
 
- ![Working file as of 06/27/23](https://github.com/nicoestrada/deaths.today/blob/main/public/2023/June/product.png?raw=true)
+ ![Working file as of 06/27/23](https://github.com/nicoestrada/deaths.today/blob/workflow-branch/public/2023/June/product.png?raw=true)
