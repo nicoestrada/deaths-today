@@ -14,17 +14,17 @@ Please see below a log of current progress and future tasks:
  * [x] [Established parsing output to generate a new html file in 2 new public directories](https://github.com/nicoestrada/deaths-today/commit/74f99790c945687196387a12a4840373d83fada2)
  * [x] [Integrate responsive HTML/CSS layout to output](https://github.com/nicoestrada/deaths-today/commit/74f99790c945687196387a12a4840373d83fada2)
  * [x] Clean text output from deaths inside container card
- * [ ] Implement SendGrid API for email sending
+ * [x] [Implement SendGrid API for email sending](https://github.com/nicoestrada/deaths.today/commit/a2acc656b4e6957abe018137af7a571ea37acdc6)
  * [x] Configure DNS domain name, email sender identity
  * [x] Fix links within each element
  * [ ] Edge case of last/first day of new month
  * [x] Added public/ to build, clean links method
- * [ ] Explore aws-sdk, express, db mgmt
  * [ ] Add conditional case if no notable deaths that day
  * [x] Create a for each death, remove reference sub tags
  * [x] Configure Continuous Integration (CI) workflows using GitHub actions
  * [x] Integrate the checkout, setup-node, push-action actions
- * [ ] Fix moment to reflect CDT time, not UTC
+ * [x] Fix moment to reflect CDT time, not UTC
+ * [x] [Integrate GitHub action workflow for sending daily email](https://github.com/nicoestrada/deaths.today/commit/cd40df4efceb24945ddac05dbb86733be78c82aa)
 
 
- ![Working file as of 11/02/22](https://github.com/nicoestrada/deaths.today/blob/main/public/2022/November/product.png?raw=true)
+ ![Working file as of 06/27/23](https://github.com/nicoestrada/deaths.today/blob/main/public/2023/June/product.png?raw=true)

@@ -113,7 +113,6 @@ const template = (content, currentDate) => {
           <div class="content" style="box-sizing: border-box; display: block; Margin: 0 auto; max-width: 580px; padding: 10px;">
             <!-- START CENTERED WHITE CONTAINER -->
             <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;">
-              Stay currect on notable figures that have passed away.
             </span>
             <table class="main" style="border-collapse: separate; mso-table-lspace: 0pt; mso-table-rspace: 0pt; width: 100%; background: #ffffff; border-radius: 3px;">
               <!-- START MAIN CONTENT AREA -->
@@ -128,11 +127,6 @@ const template = (content, currentDate) => {
                     <tr>
                       <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 16px; vertical-align: top;font-style:italic;">
                         Stay current on notable figures that have passed away. Delivered daily.
-                      </td>
-                    </tr>
-                    <tr>
-                      <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                        View on <a href="${URL}" target="_blank" style="text-decoration: none;color:${linkColor};">Wikipedia →</a>
                       </td>
                     </tr>
                   </table>
@@ -159,7 +153,12 @@ const template = (content, currentDate) => {
                 </tr>
                 <tr>
                   <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                    Made by <a href="https://twitter.com/stradamoney" target="_blank" style="text-decoration: none; color: ${linkColor}; ">Nico Estrada</a>.
+                    Read the full list on <a href="${URL}" target="_blank" style="text-decoration: none;color:${linkColor};">Wikipedia</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
+                    Want to receive daily emails? <a href="https://cdn.forms-content.sg-form.com/05a18d80-b46f-11ed-b29b-c6958c25fa58" target="_blank" style="text-decoration: none; color:${linkColor};">Subscribe here</a>
                   </td>
                 </tr>
                 <tr>
@@ -167,12 +166,10 @@ const template = (content, currentDate) => {
                     Missed a day? <a href="https://deaths.today/${moment(currentDate)
                       .subtract(2, 'days')
                       .format('YYYY/MMMM/D')
-                      .toLowerCase()}" style="text-decoration: none; color:${linkColor};">See day before → </a>
+                      .toLowerCase()}" style="text-decoration: none; color:${linkColor};">See day before</a>
                   </td>
-                </tr>
-                <tr>
-                  <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top;">
-                    Want to receive emails? <a href="https://cdn.forms-content.sg-form.com/05a18d80-b46f-11ed-b29b-c6958c25fa58" target="_blank" style="text-decoration: none; color:${linkColor};">Subscribe here → </a>
+                  <td style="font-family:'Avenir','Helvetica Neue',Helvetica,'Lucida Grande',sans-serif; font-size: 14px; vertical-align: top; float: right;">
+                    Made by <a href="https://linkedin.com/in/nico-estrada" target="_blank" style="text-decoration: none; color: ${linkColor}; ">Nico Estrada 🦅</a>
                   </td>
                 </tr>
                   </table>
