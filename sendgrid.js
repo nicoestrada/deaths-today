@@ -1,6 +1,6 @@
 const sgMail = require('@sendgrid/mail')
 const fs = require('fs')
-var request = require('request')
+// var request = require('request')
 const moment = require('moment')
 const yesterday = moment().subtract(1, 'day')
 const html = fs.readFileSync(__dirname + '/public/index.html', 'utf8')
