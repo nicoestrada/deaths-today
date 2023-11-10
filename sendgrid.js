@@ -22,7 +22,7 @@ client.request(request)
   .then(([response, body]) => {
     // let json = JSON.parse(body)
     // let { result: contacts } = json
-    let personalizations = 
+    const personalizations = 
       response.body.contacts?.map((x) => ({
       to: {
         email: x.email,
@@ -30,13 +30,7 @@ client.request(request)
     }))
     
     const msg = {
-      // personalizations,
-      to: {
-        email: 'estradanicolas@gmail.com', 
-      },
-      to: {
-        email: 'larasterzikfink@gmail.com',
-      },
+      personalizations,
       from: {
         email: 'no-reply@deaths.today',
         name: `Notable Deaths ⚔️`,
