@@ -32,11 +32,12 @@ client.request(request)
     const msg = {
       // personalizations,
       to: {
-        email: 'estradanicolas@gmail.com'
+        email: 'estradanicolas@gmail.com', 
+        email: 'larasterzikfink@gmail.com',
       },
       from: {
         email: 'no-reply@deaths.today',
-        name: `Notable Deaths of the Day`,
+        name: `Notable Deaths ⚔️`,
       },
       subject: `Notable Deaths: ${yesterday.format('MMMM DD, YYYY')}`,
       text: 'See latest notable deaths at https://deaths.today',
