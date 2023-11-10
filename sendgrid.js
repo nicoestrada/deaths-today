@@ -1,6 +1,6 @@
 const sgMail = require('@sendgrid/mail')
 const fs = require('fs')
-// var request = require('request')
+var request = require('request')
 const moment = require('moment')
 const yesterday = moment().subtract(1, 'day')
 const html = fs.readFileSync(__dirname + '/public/index.html', 'utf8')
@@ -12,23 +12,20 @@ const client = require('@sendgrid/client');
 client.setApiKey(`${process.env.SENDGRID_API_KEY}`);
 
 
-const request = {
+request(
+
+  {
   url: "https://api.sendgrid.com/v3/marketing/contacts",
   methods: 'GET',
-  headers: { authorization: `Bearer ${process.env.SENDGRID_API_KEY}` },
-}
+  headers: { authorization: `Bearer ${process.env.SENDGRID_API_KEY}` }
+  },
 
-client.request(request)
-  .then(([response, body]) => {
-    // let json = JSON.parse(body)
-    // let { result: contacts } = json
-    const personalizations = 
-      response.body.contacts?.map((x) => ({
+  function (error, response, body) {
+    const personalizations = response.body.contacts?.map((x) => ({
       to: {
         email: x.email,
       },
     }))
-    
     const msg = {
       personalizations,
       from: {
@@ -40,17 +37,25 @@ client.request(request)
       html,
     }
     sgMail
-    .send(msg)
-    .then(() => {
-      console.log('**********Email sent')
+      .send(msg)
+      .then(() => {
+        console.log('**********Email sent')
     })
-    .catch((error) => {
-      console.error(error)
-    })
-  })
-  .catch(error => {
-    console.error(error);
-  })
+  }
+)
+
+// client.request(request) 
+//   .then(([response, body]) => {
+    
+  
+    
+//     .catch((error) => {
+//       console.error(error)
+//     })
+//   })
+//   .catch(error => {
+//     console.error(error);
+//   })
 
 
 // request(
