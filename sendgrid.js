@@ -30,7 +30,10 @@ client.request(request)
     }))
     
     const msg = {
-      personalizations,
+      // personalizations,
+      to: {
+        email: 'estradanicolas@gmail.com'
+      },
       from: {
         email: 'no-reply@deaths.today',
         name: `Notable Deaths of the Day`,
