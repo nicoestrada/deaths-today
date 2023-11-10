@@ -26,7 +26,8 @@ request(
     }))
     
     const msg = {
-      personalizations,
+      // personalizations,
+      to: [`${process.env.USER1}`, `${process.env.USER2}`],
       from: {
         email: 'no-reply@deaths.today',
         name: `Notable Deaths Today`,
