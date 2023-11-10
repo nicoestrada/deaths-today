@@ -20,14 +20,15 @@ const request = {
 
 client.request(request)
   .then(([response, body]) => {
-    const json = JSON.parse(body);
-    const { result: contacts } = json;
-    const personalizations = 
+    let json = JSON.parse(body)
+    let { result: contacts } = json
+    let personalizations = 
       contacts?.map((x) => ({
-        to: {
-          email: x.email,
-        },
-      }))
+      to: {
+        email: x.email,
+      },
+    }))
+    
     const msg = {
       personalizations,
       from: {
