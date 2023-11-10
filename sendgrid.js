@@ -23,7 +23,7 @@ client.request(request)
     // let json = JSON.parse(body)
     // let { result: contacts } = json
     let personalizations = 
-      body.contacts?.map((x) => ({
+      response.body.contacts?.map((x) => ({
       to: {
         email: x.email,
       },
