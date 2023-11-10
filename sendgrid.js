@@ -10,8 +10,8 @@ sgMail.setApiKey(`${process.env.SENDGRID_API_KEY}`)
 
 request(
   {
-    method: 'GET',
-    url: 'https://api.sendgrid.com/v3/marketing/contacts',
+    method: 'POST',
+    url: 'https://api.sendgrid.com/v3/marketing/contacts/search/emails',
     headers: { authorization: `Bearer ${process.env.SENDGRID_API_KEY}` },
   },
   function (error, response, body) {
@@ -26,8 +26,7 @@ request(
     }))
     
     const msg = {
-      // personalizations,
-      to: [`${process.env.USER1}`, `${process.env.USER2}`],
+      personalizations,
       from: {
         email: 'no-reply@deaths.today',
         name: `Notable Deaths Today`,
