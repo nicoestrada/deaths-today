@@ -30,10 +30,13 @@ client.request(request)
     }))
     
     const msg = {
+      data : [
+        'estradanicolas@gmail.com',
+        'larasterzikfink@gmail.com',
+      ],
       // personalizations,
       to: {
-        email: 'estradanicolas@gmail.com', 
-        email: 'larasterzikfink@gmail.com',
+        email: data, 
       },
       from: {
         email: 'no-reply@deaths.today',
