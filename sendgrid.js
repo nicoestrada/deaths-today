@@ -18,11 +18,13 @@ request(
     if (error) throw new Error(error)
     let json = JSON.parse(body)
     let { result: contacts } = json
-    let personalizations = contacts.map((x) => ({
+    let personalizations = 
+      contacts?.map((x) => ({
       to: {
         email: x.email,
       },
     }))
+    
     const msg = {
       personalizations,
       from: {
