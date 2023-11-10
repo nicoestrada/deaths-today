@@ -20,7 +20,6 @@ const request = {
 
 client.request(request)
   .then(([response, body]) => {
-    if (error) throw new Error(error);
     const json = JSON.parse(body);
     const { result: contacts } = json;
     const personalizations = 
