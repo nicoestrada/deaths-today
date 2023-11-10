@@ -33,7 +33,7 @@ client.request(request)
       personalizations,
       from: {
         email: 'no-reply@deaths.today',
-        name: `Notable Deaths Today`,
+        name: `Notable Deaths of the Day`,
       },
       subject: `Notable Deaths: ${yesterday.format('MMMM DD, YYYY')}`,
       text: 'See latest notable deaths at https://deaths.today',
