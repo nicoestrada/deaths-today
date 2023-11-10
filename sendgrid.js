@@ -20,10 +20,10 @@ const request = {
 
 client.request(request)
   .then(([response, body]) => {
-    let json = JSON.parse(body)
+    // let json = JSON.parse(body)
     // let { result: contacts } = json
     let personalizations = 
-      json.contacts?.map((x) => ({
+      body.contacts?.map((x) => ({
       to: {
         email: x.email,
       },
