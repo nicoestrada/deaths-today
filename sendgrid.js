@@ -16,35 +16,41 @@ const request = {
   url: "https://api.sendgrid.com/v3/marketing/contacts",
   methods: 'GET',
   headers: { authorization: `Bearer ${process.env.SENDGRID_API_KEY}` },
-  function (error, response, body) {
-    if (error) throw new Error(error)
-    let json = JSON.parse(body)
-    let { result: contacts } = json
-    let personalizations = 
+}
+
+client.request(request)
+  .then(([response, body]) => {
+    if (error) throw new Error(error);
+    const json = JSON.parse(body);
+    const { result: contacts } = json;
+    const personalizations = 
       contacts?.map((x) => ({
-      to: {
-        email: x.email,
-      },
-    }))
-    const msg = {
-      personalizations,
-      from: {
-        email: 'no-reply@deaths.today',
-        name: `Notable Deaths Today`,
-      },
-      subject: `Notable Deaths: ${yesterday.format('MMMM DD, YYYY')}`,
-      text: 'See latest notable deaths at https://deaths.today',
-      html,
-    }
-    sgMail
-      .send(msg)
-      .then(() => {
-        console.log('**********Email sent')
-      })
-      .catch((error) => {
-        console.error(error)
-      })
-}}
+        to: {
+          email: x.email,
+        },
+      }))
+  })
+  const msg = {
+    personalizations,
+    from: {
+      email: 'no-reply@deaths.today',
+      name: `Notable Deaths Today`,
+    },
+    subject: `Notable Deaths: ${yesterday.format('MMMM DD, YYYY')}`,
+    text: 'See latest notable deaths at https://deaths.today',
+    html,
+  }
+  sgMail
+    .send(msg)
+    .then(() => {
+      console.log('**********Email sent')
+    })
+    .catch((error) => {
+      console.error(error)
+    })
+  .catch(error => {
+    console.error(error);
+  })
 
 
 // request(
