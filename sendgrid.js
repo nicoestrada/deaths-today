@@ -29,18 +29,17 @@ client.request(request)
           email: x.email,
         },
       }))
-  })
-  const msg = {
-    personalizations,
-    from: {
-      email: 'no-reply@deaths.today',
-      name: `Notable Deaths Today`,
-    },
-    subject: `Notable Deaths: ${yesterday.format('MMMM DD, YYYY')}`,
-    text: 'See latest notable deaths at https://deaths.today',
-    html,
-  }
-  sgMail
+    const msg = {
+      personalizations,
+      from: {
+        email: 'no-reply@deaths.today',
+        name: `Notable Deaths Today`,
+      },
+      subject: `Notable Deaths: ${yesterday.format('MMMM DD, YYYY')}`,
+      text: 'See latest notable deaths at https://deaths.today',
+      html,
+    }
+    sgMail
     .send(msg)
     .then(() => {
       console.log('**********Email sent')
@@ -48,6 +47,7 @@ client.request(request)
     .catch((error) => {
       console.error(error)
     })
+  })
   .catch(error => {
     console.error(error);
   })
