@@ -15,22 +15,28 @@ client.setApiKey(`${process.env.SENDGRID_API_KEY}`);
 request(
 
   {
-  url: "https://api.sendgrid.com/v3/marketing/contacts",
-  methods: 'GET',
-  headers: { authorization: `Bearer ${process.env.SENDGRID_API_KEY}` }
+    url: "https://api.sendgrid.com/v3/marketing/contacts",
+    methods: 'GET',
+    headers: { authorization: `Bearer ${process.env.SENDGRID_API_KEY}` }
   },
 
   function (error, response, body) {
     const personalizations = response.body.contacts?.map((x) => ({
       to: {
-        email: x.email,
+        email: "larasterzikfink@gmail.com"
       },
     }))
     const msg = {
-      personalizations,
+      // personalizations,
       from: {
         email: 'no-reply@deaths.today',
         name: `Notable Deaths ⚔️`,
+      },
+      to: {
+        email: "larasterzikfink@gmail.com",        
+      },
+      cc: {
+        email: "estradanicolas@gmail.com"
       },
       subject: `Notable Deaths: ${yesterday.format('MMMM DD, YYYY')}`,
       text: 'See latest notable deaths at https://deaths.today',
