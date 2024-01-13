@@ -2,7 +2,7 @@
 
 From Wikipedia's real-time notable deaths page. Data consists of name, age, country of citizenship at birth, subsequent nationality (if applicable), what subject the person was noted for, cause of death and reference.
 
-For more information, click [here](https://en.wikipedia.org/wiki/Deaths_in_2023).
+For more information, click [here](https://en.wikipedia.org/wiki/Deaths_in_2024).
 
 ## Tasks:
 

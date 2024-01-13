@@ -4,7 +4,7 @@ const cheerio = require('cheerio')
 const moment = require('moment-timezone')
 const fs = require('fs')
 
-const URL = 'https://en.wikipedia.org/wiki/Deaths_in_2023'
+const URL = 'https://en.wikipedia.org/wiki/Deaths_in_2024'
 moment().tz('America/Chicago').format("MMMM DD, YYYY")
 const today = moment().format('LL')
 const yesterday = moment().subtract(1, 'day')
@@ -228,7 +228,7 @@ request(URL, async (error, response, body) => {
   cleanseLinks($)
   removeRefs($)
 
-  const deaths = $('h3').next().next().next('ul').html()
+  const deaths = $('h3').next().next().next().next('ul').html()
   const dir = `./public/${yesterday.format('YYYY/MMMM')}`
   const filename = `${yesterday.format('D')}.html`
   let created = await makeDir(dir);
